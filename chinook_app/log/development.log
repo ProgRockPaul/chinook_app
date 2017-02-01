@@ -279,3 +279,28 @@ WHERE c.contype = 'f'
 ORDER BY c.conname
 [0m
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Hip Hop/Rap"], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.6ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mTrack Load (2.2ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."genre_id" = $1 LIMIT $2[0m  [["genre_id", 17], ["LIMIT", 1]]
+  [1m[36mTrack Load (3.1ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."genre_id" = $1 LIMIT $2[0m  [["genre_id", 17], ["LIMIT", 1]]
+  [1m[36mTrack Load (20.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  [1m[36mTrack Load (2.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."genre_id" = $1[0m  [["genre_id", 17]]
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT SUM("tracks"."milliseconds") FROM "tracks"[0m
+  [1m[36mMediaType Load (0.6ms)[0m  [1m[34mSELECT  "media_types".* FROM "media_types" WHERE "media_types"."name" = $1 LIMIT $2[0m  [["name", "MPEG audio file"], ["LIMIT", 1]]
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks"[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks"[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks"[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks"[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks"[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks" WHERE "tracks"."media_type_id" = $1[0m  [["media_type_id", 1]]
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks" WHERE "tracks"."media_type_id" = $1[0m  [["media_type_id", 1]]
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks" WHERE "tracks"."media_type_id" = $1[0m  [["media_type_id", 1]]
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks" WHERE "tracks"."media_type_id" = $1[0m  [["media_type_id", 1]]
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks" WHERE "tracks"."media_type_id" = $1[0m  [["media_type_id", 1]]
+  [1m[36mMediaType Load (0.7ms)[0m  [1m[34mSELECT  "media_types".* FROM "media_types" WHERE "media_types"."name" = $1 LIMIT $2[0m  [["name", "MPEG audio file"], ["LIMIT", 1]]
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT MAX("tracks"."unit_price") FROM "tracks" WHERE "tracks"."media_type_id" = $1[0m  [["media_type_id", 1]]
+  [1m[36mTrack Load (0.5ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."media_type_id" = $1 AND "tracks"."unit_price" = $2 LIMIT $3[0m  [["media_type_id", nil], ["unit_price", #<BigDecimal:7f953779fd78,'0.99E0',9(18)>], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."media_type_id" = $1 AND "tracks"."unit_price" = $2 LIMIT $3[0m  [["media_type_id", 1], ["unit_price", #<BigDecimal:7f953779fd78,'0.99E0',9(18)>], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."created_at" ASC LIMIT $1[0m  [["LIMIT", 2]]
